@@ -1,0 +1,31 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcccccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{6}{c}{Indoor PM2.5}\\
+   Sample & \multicolumn{2}{c}{All} & Non-smoking & Smoking & All & Non-smoking \\ 
+   Model:                               & (1)           & (2)           & (3)           & (4)           & (5)           & (6)\\  
+   \midrule
+   \emph{Variables}\\
+   Outdoor PM2.5                        & 0.591$^{***}$ & 0.605$^{***}$ & 0.568$^{***}$ & 0.717$^{***}$ & 0.606$^{***}$ & 0.570$^{***}$\\   
+                                        & (0.083)       & (0.079)       & (0.109)       & (0.106)       & (0.078)       & (0.110)\\   
+   Typical cooking hour (24-h recall)   & -2.49         & -3.60         & -5.23         & -2.45         &               &   \\   
+                                        & (3.44)        & (3.23)        & (3.96)        & (4.98)        &               &   \\   
+   Meal window (06-07h, 12-13h, 18-21h) &               &               &               &               & 0.832         & 0.725\\   
+                                        &               &               &               &               & (0.952)       & (0.824)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   Hour-of-day FE                       & Yes           &               &               &               &               & \\  
+   Week FE                              & Yes           & Yes           & Yes           & Yes           & Yes           & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations                         & 148,939       & 148,939       & 90,826        & 58,113        & 148,939       & 90,826\\  
+   R$^2$                                & 0.11922       & 0.11783       & 0.08221       & 0.28032       & 0.11754       & 0.08131\\  
+   \midrule \midrule
+   \multicolumn{7}{l}{\emph{Clustered (respondent\_id \& date\_hour) standard-errors in parentheses}}\\
+   \multicolumn{7}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

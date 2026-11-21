@@ -1,0 +1,29 @@
+
+\begin{tabular}{lcc}
+   \toprule
+   Dependent Variable: & \multicolumn{2}{c}{Outdoor PM2.5}\\
+                            & Closest 3 Sensors & HH Within 2km of Outdoor Sensor \\   
+   Model:                   & (1)               & (2)\\  
+   \midrule
+   \emph{Variables}\\
+   Waste Burning (1-2/week) & 0.570             & 0.431\\   
+                            & (0.779)           & (0.770)\\   
+   Waste Burning (3+/week)  & 4.06$^{***}$      & 5.12$^{***}$\\   
+                            & (1.06)            & (1.79)\\   
+   Outdoor Temperature      & -0.351            & 0.182\\   
+                            & (0.248)           & (0.260)\\   
+   Outdoor Humidity         & -0.182$^{***}$    & -0.164$^{***}$\\   
+                            & (0.043)           & (0.048)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   Week FE                  & Yes               & Yes\\  
+   Hour FE                  & Yes               & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations             & 759,777           & 394,345\\  
+   R$^2$                    & 0.38432           & 0.37470\\  
+   Within R$^2$             & 0.00992           & 0.01250\\  
+   \bottomrule
+\end{tabular}
+
+

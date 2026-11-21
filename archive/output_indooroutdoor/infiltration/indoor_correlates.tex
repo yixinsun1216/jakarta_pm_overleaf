@@ -1,0 +1,40 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcc}
+   \tabularnewline \midrule \midrule
+   Dependent Variables:    & Indoor PM2.5   & Spike in Indoor PM2.5\\  
+   Model:                  & (1)            & (2)\\  
+   \midrule
+   \emph{Variables}\\
+   Waste Burning, 1-2      & -2.090         & 0.001\\   
+                           & (5.923)        & (0.020)\\   
+   Waste Burning, 3+       & 47.040         & 0.144\\   
+                           & (35.346)       & (0.104)\\   
+   Smoked (24 Hours)       & 21.132$^{***}$ & 0.084$^{***}$\\   
+                           & (7.512)        & (0.022)\\   
+   In or Near Kitchen      & 0.227          & -0.009\\   
+                           & (7.532)        & (0.020)\\   
+   Outdoor PM2.5           & 0.667$^{***}$  & 0.002$^{***}$\\   
+                           & (0.073)        & (0.000)\\   
+   Outdoor Temp.           & 2.635$^{**}$   & 0.005\\   
+                           & (1.071)        & (0.004)\\   
+   Outdoor Humidity        & 0.683$^{***}$  & 0.003$^{***}$\\   
+                           & (0.257)        & (0.001)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   Week                    & Yes            & Yes\\  
+   Hour-of-Day             & Yes            & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations            & 131,328        & 131,328\\  
+   Dependent variable mean & 43.795         & 0.07080\\  
+   R$^2$                   & 0.11358        & 0.07001\\  
+   Adjusted R$^2$          & 0.11319        & 0.06960\\  
+   \midrule \midrule
+   \multicolumn{3}{l}{\emph{Clustered (HH) standard-errors in parentheses}}\\
+   \multicolumn{3}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

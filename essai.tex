@@ -1,0 +1,37 @@
+\documentclass[9pt,twocolumn,twoside]{pnas-new}
+% Use the lineno option to display guide line numbers if required.
+
+\templatetype{pnasresearcharticle} % Choose template
+% {pnasresearcharticle} = Template for a two-column research article
+% {pnasmathematics} %= Template for a one-column mathematics article
+% {pnasinvited} %= Template for a PNAS invited submission
+
+\usepackage[utf8]{inputenc}
+\usepackage{textgreek}
+
+%% --- track-changes markup (added by texdiff.py) ---
+\usepackage[normalem]{ulem}
+\usepackage{xcolor}
+\providecommand{\DIFadd}[1]{{\protect\color{red}#1}}
+\providecommand{\DIFdel}[1]{{\protect\color{red}\protect\sout{#1}}}
+%% ---------------------------------------------------
+\begin{document}
+
+\begin{table}
+\begin{tabular}{lcccccc}
+\toprule
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+Sample & All & All & Non-smoking & Smoking & All & Non-smoking \\
+\midrule
+Typical cooking hour (24-h recall) & $-2.49$ & $-3.60$ & $-5.23$ & $-2.45$ & & \\
+ & (3.44) & (3.23) & (3.96) & (4.98) & & \\
+Meal window (06--07h, 12--13h, 18--21h) & & & & & 0.83 & 0.73 \\
+ & & & & & (0.95) & (0.82) \\
+Hour-of-day FE & Yes & No & No & No & No & No \\
+Week FE & Yes & Yes & Yes & Yes & Yes & Yes \\
+N & 148,939 & 148,939 & 90,826 & 58,113 & 148,939 & 90,826 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

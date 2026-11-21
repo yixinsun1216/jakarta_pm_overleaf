@@ -1,0 +1,176 @@
+\documentclass[12pt,english]{article}
+\usepackage[english]{babel}
+\usepackage{ragged2e}
+\usepackage{blindtext}
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage{xcolor}
+\usepackage{cprotect}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{pdflscape}
+\usepackage{threeparttable}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{adjustbox}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{subcaption}
+
+%\usepackage{blindtext}
+\geometry{
+    verbose,%
+    lmargin=0.9in,%
+    rmargin=0.9in,%
+    tmargin=0.85in,%
+    bmargin=0.85in,%
+}
+
+\title{Referee Reports}
+\author{Jeanne \& Sunny}
+\date{January 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Editor}
+\textit{Thanks for submitting this work to PNAS. I agree with the reviewers that the question asked is both important and interesting. I also agree with them that the answers as provided in the paper are not yet compelling enough to warrant publication in PNAS. I therefore invite you to revise the manuscript, taking the detailed comments of the reviewers into account. I realize that some of their comments border on requesting that you collect new or different primary data as part of the revision -- I do not intend that to be a requirement for a successful revision. That said, the reviewers make a range of detailed suggestions regarding connections of the present paper to other works in the literature, analytic refinements, the need to make the argument accessible to PNAS's broad, multidisciplinary audience and -- above all -- modification of the conclusions in the abstract to align better with what is convincingly demonstrated in the body of the paper. Addressing the reviewers concerns will clearly be a heavy lift that will almost certainly make the paper stronger but does not guarantee its ultimate acceptance by PNAS. I nonetheless hope you will be willing to put in the effort: PNAS would very much like to publish a suitably strengthened version of this submission.}
+
+\begin{enumerate}
+    \item Modification of the conclusions in the abstract to better align with paper
+    \item Connections of paper to other works in the lit
+    \item Make the argument accessible to PNAS's broad, multidisciplinary audience
+    \item Analytic refinements
+\end{enumerate}
+
+\section{Reviewer 1}
+\paragraph{Comments on Significance Statement:}
+- L75-83. Consider rephrasing? Doesn't seem surprising that high-outdoor concentrations coincide with high indoor concentrations. Also "as hazardous" seems out-of-scope given study design. Maybe phrase as "as elevated"?
+\\
+- L90. Consider rephrasing as "not only driven by behaviors" given the large socioeconomic differences in smoking prevalence?
+
+\paragraph{Comments:}
+The authors have gathered and interpreted an impressive dataset on an important data-sparse topic in the world's largest city. Study findings are significant and potentially of interest to a broad scientific audience. However, I have some reservations about the interpretation and technical approach. More detailed comments below.
+
+\paragraph{Major Comments}
+----
+(1) Consideration of smoking impacts could be given more emphasis given high prevalence and substantive difference between low and high income bins. My quick napkin math is that \~half of the income bin differences in PM2.5 (\~25 ug m-3) are due to differences in smoking prevalence (per authors, 20.8 ug m-3 increase in homes with smoking + 60\% less smoking between high/low income bins).
+\\
+(2) The authors repeatedly state that homes are not taking protective measures (e.g., envelope tightening) despite knowledge of high outdoor air pollution. Without exploratory box modeling, I do not know whether envelope tightening interventions (e.g., air sealing or closing doors/windows to reduce air exchange) is expected to be protective on net given prevalent large indoor sources like smoking. Can such box modeling be added to the SI?
+\\
+(3) Are there side-by-side evaluations of the two particle sensor types used in the study (Cubic PM2008M for indoor particles; Plantower PMS5003 for outdoor particles)? Key study results integrate the two measurement types. However, accuracy / precision / data quality of low-cost sensors can be highly variable. I am only aware of the Plantower PMS5003 being broadly-characterized in the scientific literature.
+\\
+(4) The work implements a regression model for infiltration estimates. Past literature examples (e.g., review below) could be cited. Please explicitly note that past regression analyses have required daily time averaging as pre-condition for method validity, while this manuscript uses 1-h after a validation check (i.e. the lag analysis). Please describe the justification the lag analysis in more detail in the SI. Do conclusions change with regression analyses based on 1-h vs. 8-h vs. 1-day time averages?
+\\
+C. Chen, B. Zhao, Review of relationship between indoor and outdoor particles: I/O ratio, infiltration factor and penetration factor. Atmos. Environ. 45, 275-288 (2011).
+\\
+(5) EPA AQI thresholds usually apply to 24-h averages while the study (?) uses 1-h averages. Please correct analyses as applicable, including adjusting time-resolution of plotted data in Fig. 3a and 3d so that time series have comparable time resolution to guideline values. It might be preferable to use WHO daily and annual guideline values for PM2.5 which are stated to apply to both indoor and outdoor settings. In contrast, EPA air quality standards are stated to apply to outdoor settings only. [please confirm]
+\\
+
+\paragraph{Other Comments:}
+\\
+L15. Defer to authors, but could say as of 2025 UN estimates that Jakarta is the world's largest city.
+\\
+L18. Seems high. Please state range type (25-75th or 10-90th percentile). Also WHO daily mean guideline is a bit abstract (guideline = 99th percentile of daily mean PM2.5 values is <= 15 ug m-3). Please confirm and then rephrase as appropriate. Confirm that data are averaged to 1-day for comparison with WHO guideline of 15 ug m-3.
+\\
+L19-20. Is "unlike" correct? In the high-income country of this manuscript's reference 7 study, most (52\%) residential PM2.5 originated from outdoors.
+\\
+L244. Make sure this estimate uses the appropriate time-averaging (USEPA standards/guidelines often are on 24-h bases or sometimes greater).
+\\
+L281. Outdoor sensors certainly capture outdoor neighborhood burn events, which are probably a notable component of the ambient background. Consider rephrasing to state that outdoor sensors may not capture local plumes from neighborhood burning before they dilute into background.
+\\
+L286-289. Well-sealed buildings are protective against outdoor-infiltrated particles while increasing potential exposures to indoor particle sources. The complexity might be recognized (envelope tightening interventions may not produce beneficial outcomes if indoor sources are high).
+\\
+L363-366. Remarkably close to UK estimate https://tobaccocontrol.bmj.com/content/24/e3/e205.short
+\\
+L415-424. Are ambient PM2.5 concentrations in neighborhoods with higher-levels of survey-reported waste burning? If yes, it gets harder to define waste burning as a hyperlocal source.
+\\
+L435-444. Consider re-labeling Fig. 2b as "indoor (ambient-infiltrated)" and "indoor (hyperlocal)".
+\\
+L523-525. Can note that the larger dilution volume means the same emission event will have less overall impact.
+\\
+L533-535. Consider re-phrasing. I believe the the EPA AQI threshold is for a 24-h average.
+\\
+L547-L550. Please add more context on smoking. A quick google scholar search reveals an increase of 25 ug m-3 in smoking vs non-smoking UK households. A related study in Bangladesh finds 5 ug m-3 increase in smoking household. Much (most?) of the difference may be related to smoking rates being 60\% lower in the high income bin. This explanation should be given more weight.
+\\
+[1] https://tobaccocontrol.bmj.com/content/24/e3/e205.short \\
+[2] https://tobaccocontrol.bmj.com/content/31/3/444.abstract
+\\
+L627-637. Consider separating "indoor" into "indoor (ambient-infiltrated)" and "indoor (hyperlocal)". May also be informative to distinguish between high-smoking and low-smoking households in SI.
+\\
+L754-755. Emphasize socioeconomic differences in smoking?
+\\
+L873. Table S1?
+\\
+L881. "Rate" usually refers to changes per unit time. In contrast, beta ("infiltration rate" as named by authors) is a dimensionless parameter. To rectify, perhaps adapt nomenclature from Chen and Zhao's review article and rename beta?
+\\
+C. Chen, B. Zhao, Review of relationship between indoor and outdoor particles: I/O ratio, infiltration factor and penetration factor. Atmos. Environ. 45, 275-288 (2011).
+
+
+
+\section{Reviewer 2}
+
+\paragraph{Comments:}
+This paper uses monitors placed inside a few hundred homes in Jakarta to study the levels and sources of indoor air pollution in these households. This is an important topic and I agree with the authors that we continue to have very little systematic information on indoor air pollution for much of the world, and particularly in urban low income settings that the authors are interested in. So I think the topic is of high interest, and their data fairly novel (although more on that below), their analysis sound and well described, and their conclusions interesting and useful. I hope my comments can help improve this already nice manuscript.
+
+\paragraph{Major comments}
+1. I think the authors could be a bit more ambitious in trying to decompose the sources of observed indoor air pollution, both for the sample as a whole as well as by income. They won't be able to fully decompose the sources but I think their data will allow them to do more than they've already done. The simplest equation is something like:
+\\
+indoor PM = infiltration*outdoor PM + smoking + cooking + waste burning + other indoor + other hyperlocal outdoor
+\\
+they have the data to estimate (with varying precision) the first, second, and 4th terms. e.g. for smoking you just taking their smoking effect on PM estimate from Fig 3 and multiply by the percent of sample that smokes. Similarly for waste burning (acknowledging self reports). If you do that and subtract these known terms off, how much is left over for cooking, other indoor, and other hyperlocal sources?
+\\
+Then, using the fairly highly time resolved data they have, can they get at cooking versus hyperlocal outside stuff? a challenge of course is that cooking and traffic likely peak at similar times, but maybe they have info on distance to major roads.
+\\
+Importantly, they also have variation in the density of outdoor monitors. If hyperlocal outdoor is important, then I think its the case that estimated infiltration should be higher when outdoor monitors are closer to the relevant indoor monitor (basically, the independent variable is measured with less noise, so the regression coefficient is less attenuated).
+\\
+The overall idea is to try to estimate and account for all the stuff they can, as best they can, and report how much they can account for and what the relevant sources are. Clearly there will be imprecision but the exercise would be both interesting and very useful for thinking about intervention.
+\\
+\\
+2. Similarly, it should be straightforward to decompose income differences in indoor pollution to differences in (1) ambient PM, (2) infiltration rates, and (3) hyperlocal outdoor + indoor sources. Outdoor levels look similar (Fig 4a), infiltration rates are slightly higher in low income households (Fig 2), so it seems that most of the difference has to come from hyperlocal outdoor sources or indoor sources. Why not again try an exact decomposition here given the additional estimates for differences between smoke and non-smoking households? not all hyperlocal and indoor sources are observed, but they could basically see how much of the overall difference they could explain with what they do observe. That would be quite helpful for thinking about intervention.
+\\
+\\
+3. The abstract spends two sentences arguing for policy positions that the data currently do not support. "Policymakers should prioritize reducing outdoor sources" is not something that their data really say anything about. Is that cheaper than providing indoor filtration, or filtration + AC, or information interventions, or... ? We don't know. Is it cost beneficial to reduce outdoor sources? We don't know. etc. Why not just carefully claim what they can with their data - deploying relatively low-cost indoor sensors for a few months provides a lot of new, useful insights into indoor air quality - and not argue about what policymakers "should" do?
+\\
+\\
+4. The authors could (and probably, ahem, should) be more charitable to the existing literature measuring indoor air pollution in low income urban environments, of which there is a lot. A quick search turns up tens of papers with high quality indoor PM measurements, typically spanning a shorter time period than what the authors have here (an advantage of this current study, as the authors point out note), but nevertheless providing estimates of indoor PM in other urban settings. I think they should have a paragraph in the discussion comparing their estimated indoor PM levels to these other estimates. Are they lower or higher, and can they speculate on why? I see estimates in urban Accra, Dhaka, a bunch of cities in Peru, Kampala, etc etc. The authors do a disservice to this other work by not noting it, and learn less from their own data by not comparing it to existing measurements. They should do this.
+
+
+\section{To dos}
+\subsection{Analyses}
+
+\begin{itemize}
+    \item Infiltration
+    \begin{itemize}
+        \item Check method validity (R1) - 24h vs 1h
+    \end{itemize}
+    \item Further decomposition on the sources of indoor PM (R2)
+    \begin{itemize}
+        \item Leveraging time (cooking)
+        \item Can add distance to major roads (OSM)
+        \item Burning (R1)
+    \end{itemize}
+    \item Further decomposition on the sources of income heterogeneity (R2 and R1)
+    \begin{itemize}
+        \item In particular smoking (R1)
+    \end{itemize}
+    \item Box modeling?? (R1)
+\end{itemize}
+
+\subsection{Literature / Reframing}
+\begin{itemize}
+    \item See referenced papers to read, specifically about the additional indoor PM literature
+    \item See suggestions on changing specific sentences
+    \item EPA vs WHO limits (R1)
+    \item Additional evidence on the filters (R1)
+    \item Split between indoor (infiltrated - ambient) and indoor (hyperlocal)? (R1)
+\end{itemize}
+
+
+\end{document}

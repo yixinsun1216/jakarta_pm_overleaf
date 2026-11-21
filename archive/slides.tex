@@ -1,0 +1,215 @@
+%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[handout,aspectratio=169]{beamer} % turns on handout mode to surpress the \pause
+\usepackage{xcolor}
+\usepackage{colortbl} 
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{changepage}
+\usepackage{pgfpages}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{natbib}
+\usepackage{transparent}
+\setbeamercovered{transparent} 
+
+
+% turn off/on showing notes in the presentation
+%\setbeameroption{show notes on second screen}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+
+\definecolor{BlueGreen}{cmyk}{0.755,0,0.33,0}
+\definecolor{RawSienna}{cmyk}{0,0.72,1,0.45}
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor= blue,
+    urlcolor= blue,
+    citecolor=blue
+}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% metropolis theme
+\usetheme[progressbar=frametitle]{metropolis}
+
+
+%Changes the page numbers - {arabic}= arabic numerals, {gobble}=no page numbers, {roman}=Roman numerals
+\pagenumbering{arabic}
+
+\newcommand{\source}[1]{\caption*{\tiny Source: {#1}} }
+
+
+\begin{document}
+
+\title{New Results}
+\date{\today}
+
+\maketitle
+
+\begin{frame}{Infiltration with different levels of aggregation
+}
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{output_clean/figures/inf_aggregation.png}
+    \label{fig:placeholder}
+\end{figure}
+\end{frame}
+
+\section{Updated Main Figures}
+
+
+\begin{frame}{Infiltration - minus decomposition
+}
+\begin{figure}
+    \centering
+    \includegraphics[width=.7\linewidth]{output_clean/figures/fig2_infiltation.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Decomposition methodology}
+\scriptsize
+    To quantify the contribution of observable pollution sources to indoor PM$_{2.5}$, we estimate the following panel specification:
+\begin{align}
+\label{eq:decomp_main}
+    PM^{\text{indoor}}_{it}
+=&
+\beta_1 PM^{\text{outdoor}}_{it}
++\beta_2 \text{Smoke}_{i}
++\beta_3 \text{WasteBurn}_{i} 
++\beta_4 \text{KitchenSource}_{i}
++\beta_5 \text{Cooking}_{i} \\
+\notag
+&+\beta_6 \text{DistPrimary}_{i}
++\alpha_h+\delta_w+\varepsilon_{it}
+\end{align}
+
+where $i$ indexes household-monitor observations and $t$ indexes time. We include hour-of-day fixed effects ($\alpha_h$) and week fixed effects ($\delta_w$), and cluster standard errors at the respondent and date-hour levels.
+
+For each source $j$, we compute its mean contribution to indoor PM$_{2.5}$ as
+\begin{align*}
+\label{eq:mean_contrib}
+\overline{C}_j = \hat{\beta}_j \cdot \overline{X}_j,
+\end{align*}
+where $\overline{X}_j$ is the sample mean of source $j$. We then express this in share terms:
+\begin{align*}
+\label{eq:share_contrib}
+\text{Share}_j = \frac{\overline{C}_j}{\overline{PM^{\text{indoor}}}}.
+\end{align*}
+This ``effect size $\times$ prevalence/intensity'' construction directly maps to the reviewer’s suggested accounting identity. We report 95\% confidence intervals by propagating coefficient confidence bounds through the first equation above.
+\end{frame}
+
+
+
+\begin{frame}{Decomposition of sources}
+\begin{figure}
+    \centering
+    \includegraphics[width=.5\linewidth]{output_clean/figures/fig3_sources.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Variance decomposition (complementary).}
+\scriptsize
+To complement mean contributions, we compute LMG relative-importance shares. This provides each source’s contribution to explained variance ($R^2$), which we report alongside mean-contribution shares.
+
+\end{frame}
+
+\begin{frame}{Appendix - Contribution to Mean $PM_{2.5}$
+}
+\begin{table}[!h]
+  \centering
+  \resizebox{\textwidth}{!}{%
+    \begin{threeparttable}
+      \caption{Contribution to mean indoor pm}
+      \input{output_clean/tables/mean_contribution_table}
+      \begin{tablenotes}
+        \footnotesize
+        \item \textit{Notes:}
+      \end{tablenotes}
+    \end{threeparttable}
+  }%
+\end{table}
+
+\end{frame}
+
+
+\begin{frame}{Appendix - Contribution to Pollution Spikes
+}
+\begin{table}[!h]
+  \centering
+  \resizebox{\textwidth}{!}{%
+    \begin{threeparttable}
+      \caption{Contribution to indoor spikes}
+      \input{output_clean/tables/spike_contribution_table}
+      \begin{tablenotes}
+        \footnotesize
+        \item \textit{Notes:}
+      \end{tablenotes}
+    \end{threeparttable}
+  }%
+\end{table}
+
+\end{frame}
+
+\begin{frame}{Appendix - Density of Distance to Roads}
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{output_clean/figures/distance_to_road_ecdf.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Decomposition by Income}
+\scriptsize 
+We re-estimate Equation~\eqref{eq:decomp_main} separately by income quartile $q$. Let $\overline{PM}^{\text{indoor}}_q$ denote mean indoor PM$_{2.5}$ in quartile $q$, and let $\overline{C}_{j,q}$ denote quartile-specific source contributions. The unexplained residual is:
+\begin{equation}
+\label{eq:other_term}
+\text{Other}_q
+=
+\overline{PM}^{\text{indoor}}_q
+-
+\sum_{j \in \mathcal{J}_{\text{identified}}}\overline{C}_{j,q}.
+\end{equation}
+In practice, because ambient outdoor PM and smoking are the most precisely estimated across quartiles, we define:
+\begin{equation}
+\text{Other}_q
+=
+\overline{PM}^{\text{indoor}}_q
+-
+\left(
+\overline{C}_{\text{outdoor},q}
++
+\overline{C}_{\text{smoking},q}
+\right).
+\end{equation}
+This residual captures cooking, other indoor sources, and hyperlocal outdoor sources not separately identified with sufficient precision.
+\end{frame}
+\begin{frame}{Decomposition by Income}
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{output_clean/figures/fig4_pm_income.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Appendix: correlation between outdoor ambient and waste burning}
+\begin{table}[!h]
+  \centering
+  \resizebox{.5\textwidth}{!}{%
+    \begin{threeparttable}
+      \caption{Correlation - outdoor ambient and waste burning}
+      \input{output_clean/tables/reg_outdoor_burning}
+      \begin{tablenotes}
+        \footnotesize
+        \item \textit{Notes:}
+      \end{tablenotes}
+    \end{threeparttable}
+  }%
+\end{table}
+\end{frame}
+
+
+\end{document}
