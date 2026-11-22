@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LMG \(R^2\) Decomposition — Beyond Stoves and Outdoor Monitors: Indoor PM2.5 Concentrations and Inequality in a Fast Growing Megacity</title>
+<meta name="description" content="Exposure to fine particulate matter (PM \(_{2.5}\) ) is the leading environmental risk factor for mortality worldwide. Epidemiological and global health research typically proxies exposure using cooking fuel type and ambient outdoor PM \(_{2.5}\) concentrations. Yet urbanization is changing the poll">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>window.MathJax={tex:{tags:'ams'},chtml:{scale:0.95}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script defer src="assets/site.js"></script>
+</head><body>
+<header class="mobilebar"><button class="menu-btn" aria-controls="sidebar" aria-expanded="false" aria-label="Open contents">☰</button>
+<a href="index.html">Beyond Stoves and Outdoor Monitors: Indoor PM2.5 Concentrations and Inequality in a Fast Growing Megacity</a></header>
+<nav class="sidebar" id="sidebar" aria-label="Contents">
+  <a class="brand" href="index.html">Beyond Stoves and Outdoor Monitors: Indoor PM2.5 Concentrations and Inequality in a Fast Growing Megacity</a>
+  
+  <p class="nav-label">Contents</p>
+  <ol class="nav"><li><a href="index.html"><span class="nav-title">Title &amp; abstract</span></a></li><li><a href="introduction.html"><span class="nav-title">Introduction</span></a></li><li><a href="results.html"><span class="nav-num">1</span><span class="nav-title">Results</span></a></li><li><a href="discussion.html"><span class="nav-num">2</span><span class="nav-title">Discussion</span></a></li><li><a href="materials-and-methods.html"><span class="nav-num">3</span><span class="nav-title">Materials and Methods</span></a></li><li><a href="data-materials-and-software-availability.html"><span class="nav-title">Data, Materials, and Software Availability</span></a></li></ol><ol class="nav nav-end"><li><a href="references.html"><span class="nav-title">References</span></a></li></ol><p class="nav-label">Supplementary information</p><ol class="nav"><li><a href="survey-instruments.html"><span class="nav-title">Survey Instruments</span></a></li><li><a href="envelope-tightening-back-of-the-envelope.html"><span class="nav-title">Envelope Tightening: Back-of-the-envelope</span></a></li><li><a href="lmg-r-2-decomposition.html" class="active" aria-current="page"><span class="nav-title">LMG \(R^2\) Decomposition</span></a></li><li><a href="sensor-validation.html"><span class="nav-title">Sensor Validation</span></a></li><li><a href="references-2.html"><span class="nav-title">References</span></a></li></ol></nav>
+<div class="scrim"></div>
+<main class="content"><article class="prose"><section class="level1 unnumbered" id="lmg-r2-decomposition">
+<h1 class="unnumbered">LMG <span class="math inline">\(R^2\)</span> Decomposition</h1>
+<p>To complement the mean contribution decomposition in the main text, we decompose the <span class="math inline">\(R^2\)</span> of Equation 1 across predictors using the Lindeman-Merenda-Gold (LMG) method <span class="citation" data-cites="lindeman_introduction_1980">(<a class="cite" data-ref="ref-lindeman_introduction_1980" href="references-2.html#ref-lindeman_introduction_1980" role="doc-biblioref">Lindeman, Merenda, and Gold 1980</a>)</span>. In multiple regressions, the contribution of a predictor to explained variance depends on which other predictors are already in the model, rendering simple sequential decompositions sensitive to arbitrary ordering choices. LMG resolves the attribution problem that arises under predictor correlation by averaging each predictor’s marginal <span class="math inline">\(R^2\)</span> contribution over all possible orderings in which predictors could enter the model. This method thus provides a consistent decomposition of explained variance. We implement this using the <code>relaimpo</code> package in <code>R</code> <span class="citation" data-cites="gromping_relative_2006">(<a class="cite" data-ref="ref-gromping_relative_2006" href="references-2.html#ref-gromping_relative_2006" role="doc-biblioref">Grömping 2006</a>)</span>. The ranking of sources by <span class="math inline">\(R^2\)</span> contribution is consistent with the mean contribution decomposition in the main text: outdoor ambient pollution accounts for the largest share, followed by household smoking and waste burning, with kitchen source, cooking hour, and distance to main road contributing minimally. For pollution spikes, smoking is by far the dominant contributor, while waste burning also contributes substantially.</p>
+<div class="cite-data" hidden=""><div class="cite-entry" data-key="ref-lindeman_introduction_1980">
+Lindeman, Richard H., Peter F. Merenda, and Ruth Z. Gold. 1980. <em>Introduction to Bivariate and Multivariate Analysis</em>. Glenview, IL: Scott, Foresman; Company.
+</div><div class="cite-entry" data-key="ref-gromping_relative_2006">
+Grömping, Ulrike. 2006. <span>“Relative Importance for Linear Regression in <span>R</span>: The Package Relaimpo.”</span> <em>Journal of Statistical Software</em> 17 (1): 1–27.
+</div></div></section></article><nav class="pager"><a class="prev" href="envelope-tightening-back-of-the-envelope.html"><small>Previous</small>Envelope Tightening: Back-of-the-envelope</a><a class="next" href="sensor-validation.html"><small>Next</small>Sensor Validation</a></nav></main>
+</body></html>

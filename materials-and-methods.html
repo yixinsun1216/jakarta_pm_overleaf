@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Materials and Methods — Beyond Stoves and Outdoor Monitors: Indoor PM2.5 Concentrations and Inequality in a Fast Growing Megacity</title>
+<meta name="description" content="Exposure to fine particulate matter (PM \(_{2.5}\) ) is the leading environmental risk factor for mortality worldwide. Epidemiological and global health research typically proxies exposure using cooking fuel type and ambient outdoor PM \(_{2.5}\) concentrations. Yet urbanization is changing the poll">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>window.MathJax={tex:{tags:'ams'},chtml:{scale:0.95}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script defer src="assets/site.js"></script>
+</head><body>
+<header class="mobilebar"><button class="menu-btn" aria-controls="sidebar" aria-expanded="false" aria-label="Open contents">☰</button>
+<a href="index.html">Beyond Stoves and Outdoor Monitors: Indoor PM2.5 Concentrations and Inequality in a Fast Growing Megacity</a></header>
+<nav class="sidebar" id="sidebar" aria-label="Contents">
+  <a class="brand" href="index.html">Beyond Stoves and Outdoor Monitors: Indoor PM2.5 Concentrations and Inequality in a Fast Growing Megacity</a>
+  
+  <p class="nav-label">Contents</p>
+  <ol class="nav"><li><a href="index.html"><span class="nav-title">Title &amp; abstract</span></a></li><li><a href="introduction.html"><span class="nav-title">Introduction</span></a></li><li><a href="results.html"><span class="nav-num">1</span><span class="nav-title">Results</span></a></li><li><a href="discussion.html"><span class="nav-num">2</span><span class="nav-title">Discussion</span></a></li><li><a href="materials-and-methods.html" class="active" aria-current="page"><span class="nav-num">3</span><span class="nav-title">Materials and Methods</span></a><ol class="nav-subs"><li><a href="#ssec:methods_sampling"><span class="nav-num">3.1</span>Study Participants and Datasets</a></li><li><a href="#infiltration-factor"><span class="nav-num">3.2</span>Infiltration Factor</a></li><li><a href="#decomposition-of-indoor-pm_2.5"><span class="nav-num">3.3</span>Decomposition of Indoor PM \(_{2.5}\)</a></li></ol></li><li><a href="data-materials-and-software-availability.html"><span class="nav-title">Data, Materials, and Software Availability</span></a></li></ol><ol class="nav nav-end"><li><a href="references.html"><span class="nav-title">References</span></a></li></ol><p class="nav-label">Supplementary information</p><ol class="nav"><li><a href="survey-instruments.html"><span class="nav-title">Survey Instruments</span></a></li><li><a href="envelope-tightening-back-of-the-envelope.html"><span class="nav-title">Envelope Tightening: Back-of-the-envelope</span></a></li><li><a href="lmg-r-2-decomposition.html"><span class="nav-title">LMG \(R^2\) Decomposition</span></a></li><li><a href="sensor-validation.html"><span class="nav-title">Sensor Validation</span></a></li><li><a href="references-2.html"><span class="nav-title">References</span></a></li></ol></nav>
+<div class="scrim"></div>
+<main class="content"><article class="prose"><section class="level1" data-number="3" id="sec:methods">
+<h1 data-number="3"><span class="header-section-number">3</span> Materials and Methods</h1>
+<p>High levels of outdoor air pollution are sustained in Jakarta throughout the whole year, and historically especially high between the months of May and October. We designed the study to cover this high pollution season and conducted it in two successive rounds, with approximately 154 households participating in each round. Round 1 was conducted from 1 June to 28 August 2024, and Round 2 was conducted from 10 September to 10 December 2024. This randomized controlled trial was registered on the AEA RCT registry (Identification No. AEARCTR-0013110) and received IRB approval from the University of Chicago (Protocol No. IRB23-0310) and from Badan Riset dan Inovasi Nasional (Application No. 29012024000032). This paper uses the trial’s control households, whose devices contained no filter (<em>SI Appendix</em>). Individual respondents consented to the collection of the indoor air quality data and survey data used in this study. Ambient outdoor PM<span class="math inline">\(_{2.5}\)</span> data comes from devices monitored by our hardware implementation partner, not associated with private individuals, and therefore without personally identifying information.</p>
+<section class="level2" data-number="3.1" id="ssec:methods_sampling">
+<h2 data-number="3.1"><span class="header-section-number">3.1</span> Study Participants and Datasets</h2>
+<section class="level4" id="study-participants">
+<h4> Study Participants:</h4>
+<p>Households participating in our study were selected among Jakarta households, through a partnership with the Education Office in Jakarta, which compiled a representative list of Jakarta schools. We randomly sampled households from school rosters and successfully enrolled 308 participants, 283 of whom successfully installed the hardware, connected to Wi-Fi, and began data collection. Therefore, all our participant households have at least one elementary school child. As surveying challenges like low participation and high attrition are common in developing country cities <span class="citation" data-cites="greenstone_indoor_2021">(<a class="cite" data-ref="ref-greenstone_indoor_2021" href="references.html#ref-greenstone_indoor_2021" role="doc-biblioref">Greenstone, Lee, and Sahai 2021</a>)</span>, our sample strategy was designed to address these challenges and ensure the proper use and return of air quality hardware. By the end of our study, attrition was only 8%. This attrition rate is consistent with rates typically observed in rural contexts, but is an exceptionally low rate for surveying in urban settings. For instance, <span class="citation" data-cites="greenstone_indoor_2021">(<a class="cite" data-ref="ref-greenstone_indoor_2021" href="references.html#ref-greenstone_indoor_2021" role="doc-biblioref">Greenstone, Lee, and Sahai 2021</a>)</span>, a paper with a related research question conducted in Delhi, reported attrition rates of 19–32% across their treatment groups. All analyses were conducted in R version 4.5.2.</p>
+<p>The geographic distribution of participating households is displayed in Fig. <a class="xref-float" data-reference="fig:desc_pm" data-reference-type="ref" href="results.html#fig:desc_pm">1</a>a, which demonstrates the wide coverage across the city. Households in our sample are relatively larger and less wealthy than the average Jakarta household but span a wide range of socioeconomic backgrounds. For more information on how our sample compares to the wider Jakarta population, see <em>SI Appendix</em>, Table <a class="appx-ref" data-target="tab:covariates--inline" href="#tab:covariates--inline">S5</a>.</p><details class="appx-float" id="tab:covariates--inline"><summary><span class="appx-tag">Table S5</span><span class="appx-title"><strong>Summary Statistics of Household Survey</strong></span><span class="appx-hint">Supplement</span></summary><figure class="float float-table inline-copy"><figcaption class="float-head"><span class="float-label">Table S5</span><span class="float-title"><strong>Summary Statistics of Household Survey</strong></span></figcaption><div class="float-body"><table>
+
+<thead>
+<tr>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: center;">Sample Mean</th>
+<th style="text-align: center;">N</th>
+<th style="text-align: center;">Population Mean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Female</td>
+<td class="num" style="text-align: center;">0.9</td>
+<td class="num" style="text-align: center;">283</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Age</td>
+<td class="num" style="text-align: center;">41.21</td>
+<td class="num" style="text-align: center;">283</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(6.91)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HH Size</td>
+<td class="num" style="text-align: center;">5.13</td>
+<td class="num" style="text-align: center;">283</td>
+<td class="num" style="text-align: center;">3.79</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(1.94)</td>
+<td style="text-align: center;"></td>
+<td class="num" style="text-align: center;">(1.31)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Number of Children</td>
+<td class="num" style="text-align: center;">2.05</td>
+<td class="num" style="text-align: center;">283</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(1.03)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HH Monthly Exp. (USD)</td>
+<td class="num" style="text-align: center;">248.74</td>
+<td class="num" style="text-align: center;">275</td>
+<td class="num" style="text-align: center;">655.94</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(117.16)</td>
+<td style="text-align: center;"></td>
+<td class="num" style="text-align: center;">(707.71)</td>
+</tr>
+<tr>
+<td style="text-align: left;">HH Monthly Income (USD)</td>
+<td class="num" style="text-align: center;">312.48</td>
+<td class="num" style="text-align: center;">281</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(194.17)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HH Head Attended Secondary</td>
+<td class="num" style="text-align: center;">0.88</td>
+<td class="num" style="text-align: center;">283</td>
+<td class="num" style="text-align: center;">0.88</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HH Head Attended Tertiary</td>
+<td class="num" style="text-align: center;">0.14</td>
+<td class="num" style="text-align: center;">283</td>
+<td class="num" style="text-align: center;">0.3</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Owns AC</td>
+<td class="num" style="text-align: center;">0.55</td>
+<td class="num" style="text-align: center;">282</td>
+<td class="num" style="text-align: center;">0.39</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(0.5)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">LPG Stove</td>
+<td class="num" style="text-align: center;">0.98</td>
+<td class="num" style="text-align: center;">283</td>
+<td class="num" style="text-align: center;">0.96</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Number of Smokers</td>
+<td class="num" style="text-align: center;">0.93</td>
+<td class="num" style="text-align: center;">283</td>
+<td class="num" style="text-align: center;">0.73</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(0.85)</td>
+<td style="text-align: center;"></td>
+<td class="num" style="text-align: center;">(0.71)</td>
+</tr>
+</tbody>
+</table></div><details class="float-notes"><summary>Table notes</summary><div class="float-notes-body"><p>Household characteristics and comparisons to the Jakarta population mean. Population means were calculated using data from the National Socioeconomic Survey (SUSENAS) 2023.</p></div></details></figure></details>
+<p>Following enrollment, the survey enumerators visited households to obtain informed consent and administer a baseline survey. This survey captured household demographic information, housing structure characteristics, and beliefs and behaviors related to indoor and outdoor air pollution. Upon consent, air quality hardware was installed in the home for approximately three months, during which it collected continuous indoor air quality data. Survey questions are listed in the <em>SI Appendix</em>.</p>
+</section>
+<section class="level4" id="indoor-pm_2.5">
+<h4> Indoor PM<span class="math inline">\(_{2.5}\)</span>:</h4>
+<p>The air quality hardware consisted of a fan equipped with an internal PM<span class="math inline">\(_{2.5}\)</span> sensor (Cubic PM2008M) and was installed in each participating household. The sensor measures particulate concentration via an optical light-scattering method, with accuracy specifications based on factory calibration against a GRIMM aerosol spectrometer. The sensors were designed to collect PM<span class="math inline">\(_{2.5}\)</span> data in real time, with readings not visible to respondents. When connected to Wi-Fi, the devices transmitted data to a remote server at five-minute intervals, which were subsequently aggregated to the hourly level for analysis. The hardware was produced by Nafas, a Jakarta-based air quality technology company.</p>
+<p>To incentivize households to keep the hardware on, participants received IDR 35,000 (approximately USD 2) every 30 days, contingent on the hardware being connected to Wi-Fi and operational for an average of 14 hours per day. For households without Wi-Fi or unwilling to use their Wi-Fi for the experiment, dedicated Wi-Fi units were installed. To offset electricity costs, participants received an additional IDR 15,000 (approximately USD 1) every 30 days.</p>
+<p>Wi-Fi connectivity issues led to intermittent data loss; in these cases, enumerators were dispatched to retrieve readings manually. Data coverage averaged 539 hours per household over the 2–3 month monitoring period. However, coverage varied considerably across households: while most contributed sufficient data for analysis, a subset experienced persistent Wi-Fi signal failure that limited retrievable readings to only a few hours. The full distribution of household-level coverage is reported in <em>SI Appendix</em>, Fig. <a class="xref-float" href="results.html#fig:indoor_missing--inline">S2</a>.</p>
+<p>To assess whether non-random patterns of missing data affect our estimates, we re-estimate Equation <a data-reference="eq:infiltration" data-reference-type="ref" href="#eq:infiltration">1</a> under three alternative inverse-probability weighting schemes. Our main specification does not include weights, which implicitly upweights households for whom we observe more PM<span class="math inline">\(_{2.5}\)</span> readings. As robustness checks, we alternatively weight by the inverse of (i) the household-specific observation rate, upweighting households with more missing data, and (ii) the household-by-hour observation rate, upweighting household-hour cells with more missing data. If missingness were systematically related to the infiltration factor, these reweighting schemes would shift the estimated coefficient. We find stable estimates across weighting schemes, suggesting that our main results are not driven by differential data coverage across hours, households, or their interaction (<em>SI Appendix</em>, Fig. <a class="xref-float" href="results.html#fig:dist_sensor--inline">S3</a>).</p>
+<p>We classify a household as not meeting the WHO 24-hour guideline (99th percentile of daily means at or below 15 <span class="math inline">\(\mu g/m^3\)</span>) if any of its monitored days exceeded 15 <span class="math inline">\(\mu g/m^3\)</span>.</p>
+</section>
+<section class="level4" id="outdoor-pm_2.5">
+<h4> Outdoor PM<span class="math inline">\(_{2.5}\)</span>:</h4>
+<p>Our hardware partner, Nafas, maintains a dense network of low-cost Airly outdoor sensors across the city, each equipped with a Plantower PMS5003 optical light-scattering sensor. Accuracy and network performance follow the manufacturer’s factory calibration and Nafas’s routine QA/QC procedures. This sensor has been broadly deployed and is one of the most extensively studied low-cost sensors. In Jakarta, a collocation of an Airly outdoor sensor with the US Embassy reference monitor during our study period finds high hourly correlation (R<span class="math inline">\(^2\)</span> = 0.90) but with the Airly sensor reading on average 13% higher than the reference monitor (<em>SI Appendix</em>, Fig. <a class="xref-float" href="results.html#fig:sensor_validation--inline">S9</a>), especially at low concentrations. This finding is consistent with studies finding relatively high accuracy against reference instruments with high hourly correlations (R<span class="math inline">\(^2\)</span> typically between 0.80 and 0.95) <span class="citation" data-cites="Sayahi2019 Zheng2018">(<a class="cite" data-ref="ref-Sayahi2019" href="references.html#ref-Sayahi2019" role="doc-biblioref">Sayahi, Butterfield, and Kelly 2019</a>; <a class="cite" data-ref="ref-Zheng2018" href="references.html#ref-Zheng2018" role="doc-biblioref">Zheng et al. 2018</a>)</span>, despite systematic bias in absolute mass concentrations, especially at high levels of humidity.</p>
+<p>For each household, we calculate a weighted average of air quality readings from the three nearest outdoor sensors, assigning weights inversely proportional to the distance to each sensor. The 63 outdoor sensors used in this study also capture temperature and humidity data, which we use as controls. The outdoor low-cost sensors were installed prior to our study and were not randomly distributed across space, which could introduce non-randomly distributed measurement error. We test for selection in the location of outdoor sensors by regressing a household’s distance to the closest outdoor sensor on recorded indoor PM<span class="math inline">\(_{2.5}\)</span>, recorded outdoor PM<span class="math inline">\(_{2.5}\)</span> of this sensor, household income, house size, whether the household owns an AC, household head employment status, and household head education level. We do not find evidence of selection bias on observables, as shown in the <em>SI Appendix</em>, Table <a class="appx-ref" data-target="tab:sensor_selection--inline" href="#tab:sensor_selection--inline">S6</a>.</p><details class="appx-float" id="tab:sensor_selection--inline"><summary><span class="appx-tag">Table S6</span><span class="appx-title"><strong>Distance to Outdoor Sensor Not Correlated with Household Characteristics</strong></span><span class="appx-hint">Supplement</span></summary><figure class="float float-table inline-copy"><figcaption class="float-head"><span class="float-label">Table S6</span><span class="float-title"><strong>Distance to Outdoor Sensor Not Correlated with Household Characteristics</strong></span></figcaption><div class="float-body"><table>
+
+<tbody>
+<tr>
+<td style="text-align: left;">Dependent Variable:</td>
+<td style="text-align: center;">Distance to Outdoor Sensor (meters)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Model:</td>
+<td class="num" style="text-align: center;">(1)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Variables</em></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Indoor PM2.5</td>
+<td class="num" style="text-align: center;">-0.99</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(2.44)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Outdoor PM2.5</td>
+<td class="num" style="text-align: center;">1.19</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(9.21)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Income (USD)</td>
+<td class="num" style="text-align: center;">0.13</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(0.58)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Housing Size</td>
+<td class="num" style="text-align: center;">42.52</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(53.36)</td>
+</tr>
+<tr>
+<td style="text-align: left;">AC</td>
+<td class="num" style="text-align: center;">-198.33</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(197.47)</td>
+</tr>
+<tr>
+<td style="text-align: left;">HOH Employed</td>
+<td class="num" style="text-align: center;">314.69</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(374.62)</td>
+</tr>
+<tr>
+<td style="text-align: left;">HOH Attended Secondary School</td>
+<td class="num" style="text-align: center;">-285.71</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(305.55)</td>
+</tr>
+<tr>
+<td style="text-align: left;">HOH Attended Tertiary School</td>
+<td class="num" style="text-align: center;">-173.15</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td class="num" style="text-align: center;">(317.86)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Fit statistics</em></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Dependent variable mean</td>
+<td class="num" style="text-align: center;">2,337.6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Observations</td>
+<td class="num" style="text-align: center;">283</td>
+</tr>
+</tbody>
+</table></div><details class="float-notes"><summary>Table notes</summary><div class="float-notes-body"><p>Regression of households’ distance to nearest outdoor sensor on household covariates. IID standard-errors in parentheses. Signif. Codes: <sup class="stars">***</sup>: 0.01, <sup class="stars">**</sup>: 0.05, <sup class="stars">*</sup>: 0.1.</p></div></details></figure></details>
+<p>Since sensors cannot capture the hyperlocal conditions at each household, outdoor PM<span class="math inline">\(_{2.5}\)</span> could still be measured with error, which would attenuate the estimated infiltration coefficient toward zero, with greater attenuation for households located farther from a sensor. Consistent with this, we show in <em>SI Appendix</em> that while the estimated infiltration factor is stable across hourly, 8-hour, and 24-hour aggregation windows, it rises when the sample is restricted to households located closer to outdoor sensors.</p>
+</section>
+<section class="level4" id="sensor-differences.">
+<h4> Sensor differences.</h4>
+<p>Because indoor and outdoor PM<span class="math inline">\(_{2.5}\)</span> are measured with different sensor types, differences in their calibration could further affect our estimates. A two-week side-by-side deployment in September 2026 of three indoor devices and one outdoor sensor suggests that the sensors track each other closely (hourly <span class="math inline">\(R^2\)</span> between 0.88 and 0.90) but indoor sensors record systematically lower concentrations (about 10 <span class="math inline">\(\mu g/m^3\)</span> lower on average), plausibly because the indoor sensor is housed inside the device. The difference is approximately additive: device-specific slopes range from 0.88 to 1.06 (mean 0.96) and intercepts from <span class="math inline">\(-6\)</span> to <span class="math inline">\(-12\)</span> <span class="math inline">\(\mu g/m^3\)</span>, and the offset is similar across the observed ranges of humidity (49–94%) and temperature (24–33<span class="math inline">\(^{\circ}\)</span>C). Converting both series to reference-grade monitor units (<em>SI Appendix</em>) changes the infiltration factor little (0.62 instead of 0.59; Fig. <a class="xref-float" data-reference="fig:infiltration" data-reference-type="ref" href="results.html#fig:infiltration">2</a>a, or 0.50 if the calibration slope is instead estimated with the indoor device as the regressor to allow for measurement error in the outdoor sensor). Assuming the offset also holds below the collocated range (23–100 <span class="math inline">\(\mu g/m^3\)</span>), the conversion raises mean indoor PM<span class="math inline">\(_{2.5}\)</span> from 42.3 to about 47.5 <span class="math inline">\(\mu g/m^3\)</span>, the indoor/outdoor ratio from 1.07 to 1.37, and the share of households not meeting the WHO 24-hour guideline from 97% to 99%.</p>
+</section>
+<section class="level4" id="natural-ventilation-behaviors">
+<h4> Natural ventilation behaviors:</h4>
+<p>To complement our main survey efforts, we deployed a short WhatsApp survey to participating households on three separate occasions during the study period. The survey asked respondents whether the windows and doors in the room housing the indoor monitor had been open or closed during the past hour.</p>
+</section>
+</section>
+<section class="level2" data-number="3.2" id="infiltration-factor">
+<h2 data-number="3.2"><span class="header-section-number">3.2</span> Infiltration Factor</h2>
+<p>The average indoor infiltration factor is defined as the increase in indoor PM<span class="math inline">\(_{2.5}\)</span> concentration per unit increase in local ambient outdoor PM<span class="math inline">\(_{2.5}\)</span> concentration. To estimate this factor, we used a regression model at the monitor-hour level. For each household <span class="math inline">\(i\)</span> in hour <span class="math inline">\(t\)</span>, the infiltration factor (<span class="math inline">\(\beta\)</span>) was estimated using the following specification:</p>
+<p><span class="math display" id="eq:infiltration">\begin{align*}
+\tag{1}
+    PM^{In}_{it} &amp;= \alpha + \beta PM^{Out}_{it}  \\
+    &amp;\quad + \pi_1 \mathbf{1}[\text{Smoking}]_i  \notag \\ &amp;\quad+ \pi_2 \mathbf{1}[\text{Waste burning}]_i + \pi_3 \mathbf{1}[\text{Kitchen}]_i \notag \\ &amp;\quad + \pi_4 \mathbf{1}[\text{CookingHour}]_t + \pi_5 \text{DistPrimaryRoad}_i \notag \\ &amp;\quad+ \psi T_{it} + \gamma H_{it} + \mu_h + \mu_w + \varepsilon_{it} \notag
+\end{align*}</span> where <span class="math inline">\(PM^{In}_{it}\)</span> and <span class="math inline">\(PM^{Out}_{it}\)</span> denote indoor and outdoor PM<span class="math inline">\(_{2.5}\)</span> concentrations for household <span class="math inline">\(i\)</span> at hour <span class="math inline">\(t\)</span>, respectively. <span class="math inline">\(\mathbf{1}[\text{Smoking}]\)</span> indicates whether the respondent reported smoking inside the home in the 24 hours preceding the survey. <span class="math inline">\(\mathbf{1}[\text{Waste burning}]\)</span> is a categorical indicator for self-reported, waste burning activity in the neighborhood in the seven days preceding the survey, distinguishing no burning events, one to two events, and at least three events. <span class="math inline">\(\mathbf{1}[\text{Kitchen}]\)</span> indicates whether the monitor was located in or adjacent to the kitchen. <span class="math inline">\(\mathbf{1}[\text{Cooking hour}]\)</span> is a binary indicator equal to one if, according to a 24-hour time-use recall survey, the household reported cooking during the hour of day corresponding to <span class="math inline">\(t\)</span>. <span class="math inline">\(\text{DistPrimaryRoad}\)</span> is the household’s distance to the nearest main road, defined as a highway or primary road in the OpenStreetMap classification. <span class="math inline">\(T_{it}\)</span> and <span class="math inline">\(H_{it}\)</span> are contemporaneous outdoor temperature and relative humidity, respectively. <span class="math inline">\(\mu_h\)</span> denotes hour-of-day fixed effects, capturing diurnal patterns in both ambient pollution and household activity, and <span class="math inline">\(\mu_w\)</span> denotes week-of-sample fixed effects, capturing longer-run temporal trends and atmospheric conditions.</p>
+<p>The estimated <span class="math inline">\(\beta\)</span> for this main specification and alternative ones is presented in Fig. <a class="xref-float" data-reference="fig:infiltration" data-reference-type="ref" href="results.html#fig:infiltration">2</a>a:</p>
+<ol>
+<li><p>Main specification: includes household-specific controls that account for non-ambient sources, outdoor meteorological controls (temperature and relative humidity), controls for average variation in PM<span class="math inline">\(_{2.5}\)</span> over the course of the day (hour-of-day fixed effects, <span class="math inline">\(\mu_h\)</span>) and average weekly trends (week-of-sample fixed effects, <span class="math inline">\(\mu_w\)</span>).</p></li>
+<li><p>Controls for meteorological conditions (temperature and relative humidity), average variation in PM<span class="math inline">\(_{2.5}\)</span> over the course of the day (hour-of-day fixed effects, <span class="math inline">\(\mu_h\)</span>), average weekly trends (week-of-sample fixed effects, <span class="math inline">\(\mu_w\)</span>), as well as time-invariant differences across households (<span class="math inline">\(\mu_i\)</span>).</p></li>
+<li><p>Controls for meteorological conditions (temperature and relative humidity), average weekly trends (week-of-sample fixed effects, <span class="math inline">\(\mu_w\)</span>) and for household-specific average variation in PM<span class="math inline">\(_{2.5}\)</span> at different times of the day (household-hour-of-day fixed effects, <span class="math inline">\(\mu_{ih}\)</span>).</p></li>
+<li><p>Controls for household-specific controls that account for non-ambient sources only. Does not include controls for outdoor meteorological conditions, time-of-day fixed-effects or week-of-sample fixed-effects.</p></li>
+<li><p>Specification 1 but restricts the sample to households located within 2 km of a low-cost outdoor sensor to assess the potential impact of measurement error in outdoor PM<span class="math inline">\(_{2.5}\)</span> concentrations on infiltration estimates.</p></li>
+<li><p>Specification 1, but pollution data is aggregated into 8 hour means.</p></li>
+<li><p>Specification 1, but pollution data is aggregated into 24 hour means.</p></li>
+<li><p>Specification 1, but with indoor and outdoor PM<span class="math inline">\(_{2.5}\)</span> converted to reference-monitor units using the collocation relationships described above (<em>SI Appendix</em>, Fig. <a class="xref-float" href="results.html#fig:sensor_validation--inline">S9</a>), to adjust for differences between the sensor types.</p></li>
+</ol>
+<p>The estimated infiltration factor (<span class="math inline">\(\beta\)</span>) remains highly stable across all specifications. We chose specification 1 as our main specification as it enables us to examine heterogeneity by household-level characteristics, which would not be possible in the presence of household fixed-effects (<span class="math inline">\(\mu_i\)</span>).<br/>
+We further investigate lagged effects of outdoor PM<span class="math inline">\(_{2.5}\)</span> with the following specification: <span class="math display">\[\begin{aligned}
+     PM^{In}_{it} &amp;= \alpha + \sum_{k = 0}^{11}\beta_k PM^{Out}_{it} \\
+     &amp;\quad+ \pi_1 \mathbf{1}[\text{Smoking}]_i  \notag \\ &amp;\quad+ \pi_2 \mathbf{1}[\text{Waste burning}]_i + \pi_3 \mathbf{1}[\text{Kitchen}]_i \notag \\ &amp;\quad + \pi_4 \mathbf{1}[\text{CookingHour}]_t + \pi_5 \text{DistPrimaryRoad}_i \notag \\ &amp;\quad+ \psi T_{it} + \gamma H_{it} + \mu_h + \mu_w + \varepsilon_{it} \notag
+\end{aligned}\]</span> In <em>SI Appendix</em>, Fig. <a class="xref-float" href="results.html#fig:inf_lag--inline">S1</a>, we present the results when including 11 lags (outdoor PM<span class="math inline">\(_{2.5}\)</span> at each of the previous 11 hours) and ensure that the results are robust to the inclusion of additional lags. From this regression, we derive an estimate of outdoor-indoor infiltration by calculating the cumulative effect of a 1 <span class="math inline">\(\mu g/m^3\)</span> increase in outdoor concentration on indoor concentration: <span class="math display">\[\begin{aligned}
+    \beta' = \sum_{k=0}^11 \beta_k
+\end{aligned}\]</span> Infiltration factors derived from this lagged regression (.67 - .7) are very similar to our main estimates, consistent with most of the infiltration happening within the first hour, as shown in Fig. <a class="xref-float" data-reference="fig:infiltration" data-reference-type="ref" href="results.html#fig:infiltration">2</a>.<br/>
+To examine heterogeneity in infiltration factors across household characteristics <span class="math inline">\(X_i\)</span>, we run the following interacted specification: <span class="math display">\[\begin{aligned}
+    PM^{In}_{it} &amp;= \alpha + \beta_1 PM^{Out}_{it} + \beta_2 X_i + \beta_3(PM^{Out}_{it} \times X_i) \\
+    &amp;\quad + \pi_1 \mathbf{1}[\text{Smoking}]_i  \notag \\
+    &amp;\quad + \pi_2 \mathbf{1}[\text{Waste burning}]_i \notag + \pi_3 \mathbf{1}[\text{Kitchen}]_i \\ &amp;\quad + \pi_4 \mathbf{1}[\text{CookingHour}]_t \notag + \pi_5 \text{DistPrimaryRoad}_i \\ &amp;\quad + \psi T_{it} + \gamma H_{it} + \mu_h + \mu_w + \varepsilon_{it} \notag
+\end{aligned}\]</span></p>
+</section>
+<section class="level2" data-number="3.3" id="decomposition-of-indoor-pm_2.5">
+<h2 data-number="3.3"><span class="header-section-number">3.3</span> Decomposition of Indoor PM<span class="math inline">\(_{2.5}\)</span></h2>
+<p>To decompose indoor PM<span class="math inline">\(_{2.5}\)</span> concentrations by source for Fig. <a class="xref-float" data-reference="fig:hyperlocal_sources" data-reference-type="ref" href="results.html#fig:hyperlocal_sources">3</a>, we use the coefficients from Equation <a data-reference="eq:infiltration" data-reference-type="ref" href="#eq:infiltration">1</a>. We quantify each source’s mean contribution to indoor PM<span class="math inline">\(_{2.5}\)</span> by multiplying the estimated coefficient by the sample mean of the corresponding variable and expressing the product as a share of mean indoor PM<span class="math inline">\(_{2.5}\)</span>.</p>
+<p>We further assess source importance by decomposing the <span class="math inline">\(R^2\)</span> of Equation <a data-reference="eq:infiltration" data-reference-type="ref" href="#eq:infiltration">1</a> across predictors using the Lindeman-Merenda-Gold (LMG) method (<em>SI Appendix</em>, Tables <a class="xref-float" href="results.html#tab:source--inline">S1</a> and <a class="xref-float" href="results.html#tab:spike_source--inline">S3</a>) <span class="citation" data-cites="lindeman_introduction_1980 gromping_relative_2006">(<a class="cite" data-ref="ref-lindeman_introduction_1980" href="references.html#ref-lindeman_introduction_1980" role="doc-biblioref">Lindeman, Merenda, and Gold 1980</a>; <a class="cite" data-ref="ref-gromping_relative_2006" href="references.html#ref-gromping_relative_2006" role="doc-biblioref">Grömping 2006</a>)</span>.</p>
+<p>To quantify how income explains differences in indoor PM<span class="math inline">\(_{2.5}\)</span> concentrations, we estimate a single regression of indoor PM<span class="math inline">\(_{2.5}\)</span> on all source variables interacted with income quartile, controlling for outdoor temperature, humidity, and hour-of-day and week fixed effects. This allows the coefficients on outdoor ambient PM<span class="math inline">\(_{2.5}\)</span> (the infiltration factor) and each hyperlocal source to vary by income quartile. We then decompose mean indoor PM<span class="math inline">\(_{2.5}\)</span> for each quartile into three components: the outdoor ambient contribution, calculated by multiplying the quartile-specific infiltration factor by the quartile-specific mean outdoor PM<span class="math inline">\(_{2.5}\)</span>; the smoking contribution, calculated analogously using quartile-specific smoking coefficients and prevalence; and a residual hyperlocal component, computed as the difference between observed mean indoor PM<span class="math inline">\(_{2.5}\)</span> and the sum of the outdoor and smoking contributions.</p>
+</section>
+<div class="cite-data" hidden=""><div class="cite-entry" data-key="ref-greenstone_indoor_2021">
+Greenstone, Michael, Kenneth Lee, and Harshil Sahai. 2021. <span>“Indoor <span>Air</span> <span>Quality</span>, <span>Information</span>, and <span>Socioeconomic</span> <span>Status</span>: <span>Evidence</span> from <span>Delhi</span>.”</span> <em>AEA Papers and Proceedings</em> 111 (May): 420–24. <a href="https://doi.org/10.1257/pandp.20211006">https://doi.org/10.1257/pandp.20211006</a>.
+</div><div class="cite-entry" data-key="ref-Sayahi2019">
+Sayahi, Tofigh, Ashley Butterfield, and Kerry E. Kelly. 2019. <span>“Long-Term Field Evaluation of the <span>Plantower</span> <span>PMS</span> Low-Cost Particulate Matter Sensors.”</span> <em>Environmental Pollution</em> 245: 932–40. <a href="https://doi.org/10.1016/j.envpol.2018.11.065">https://doi.org/10.1016/j.envpol.2018.11.065</a>.
+</div><div class="cite-entry" data-key="ref-Zheng2018">
+Zheng, Tongshu, Michael H. Bergin, Karoline K. Johnson, Sachchida N. Tripathi, Shilpa Shirodkar, Matthew S. Landis, Ronak Sutaria, and Drew E. Carlson. 2018. <span>“Field Evaluation of Low-Cost Particulate Matter Sensors in High- and Low-Concentration Environments.”</span> <em>Atmospheric Measurement Techniques</em> 11: 4823–46. <a href="https://doi.org/10.5194/amt-11-4823-2018">https://doi.org/10.5194/amt-11-4823-2018</a>.
+</div><div class="cite-entry" data-key="ref-lindeman_introduction_1980">
+Lindeman, Richard H., Peter F. Merenda, and Ruth Z. Gold. 1980. <em>Introduction to Bivariate and Multivariate Analysis</em>. Glenview, IL: Scott, Foresman; Company.
+</div><div class="cite-entry" data-key="ref-gromping_relative_2006">
+Grömping, Ulrike. 2006. <span>“Relative Importance for Linear Regression in <span>R</span>: The Package Relaimpo.”</span> <em>Journal of Statistical Software</em> 17 (1): 1–27.
+</div></div></section></article><nav class="pager"><a class="prev" href="discussion.html"><small>Previous</small>Discussion</a><a class="next" href="data-materials-and-software-availability.html"><small>Next</small>Data, Materials, and Software Availability</a></nav></main>
+</body></html>
